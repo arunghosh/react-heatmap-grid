@@ -1,0 +1,55 @@
+{
+  "name": "react-heatmap-grid",
+  "version": "0.1.1",
+  "description": "React component for heatmap on grid layout",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "NODE_ENV=dev webpack-dev-server",
+    "build": "rimraf dist && eslint src && NODE_ENV=prod webpack"
+  },
+  "author": "Arun Ghosh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arunghosh/react-heatmap-grid"
+  },
+  "keywords": [
+    "heatmap",
+    "react",
+    "component"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^8.0.0",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.27.3",
+    "enzyme": "^2.7.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-prettier": "^2.5.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest": "^19.0.2",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.4.2",
+    "react-dom": "^0.14.0 || ^15.4.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
+}
