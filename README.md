@@ -9,10 +9,12 @@ npm install react-heatmap-grid
 
 **Usage**
 
-The component takes 
-* `xLabels` - 1D array of numbers
-* `yLables` - 1D array of numbers
-* 'data' - 2D array of numbers  having `yLabels.length` rows and 'xLabels.length` rows. 
+The mandatory properties 
+|Name |Type|Description|Sample|
+|---|---|---|---|
+|`xLabels`|Array of string|`['1am', '2am', ''3am]`|
+|`yLables`|Array of string|`['Sun, 'Mon']`|
+|`data`|2D Array of numbers having `yLabels.length` rows and 'xLabels.length` rows|`[[2,3,5][5,6,9]]`| 
 
 ```javascript
 const xLabels = new Array(24).fill(0).map((_, i) => `${i}`);
@@ -36,9 +38,9 @@ ReactDOM.render(
 
 |Name |Type|Description|Default Value|
 |---|---|---|---|
-|background|PropTypes.string|The base color for the heatmap|#329fff|
-|height|PropTypes.number|Height of each cell of the heatmap in px|30|
-|xLabelWidth|PropTypes.number|Width of the x label area in pixel|60|
+|background|string|The base color for the heatmap|#329fff|
+|height|number|Height of each cell of the heatmap in px|30|
+|xLabelWidth|number|Width of the x label area in pixel|60|
 
 
 ### For developers
