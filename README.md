@@ -7,6 +7,7 @@ npm install react-heatmap-grid
 ```
 
 
+
 ## Usage
 
 **Mandatory fields** 
@@ -42,6 +43,7 @@ ReactDOM.render(
 |background|string|The base color for the heatmap|#329fff|
 |height|number|Height of each cell of the heatmap in px|30|
 |xLabelWidth|number|Width of the x label area in pixel|60|
+
 
 
 ### For developers
