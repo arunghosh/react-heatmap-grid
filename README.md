@@ -1,15 +1,16 @@
 # react-heatmap-grid
 
-**Installation**
+## Installation
 
 ```
 npm install react-heatmap-grid
 ```
 
 
-**Usage**
 
-The mandatory properties 
+## Usage
+
+**Mandatory fields** 
 
 |Name |Type|Sample|
 |---|---|---|
@@ -44,19 +45,20 @@ ReactDOM.render(
 |xLabelWidth|number|Width of the x label area in pixel|60|
 
 
+
 ### For developers
 
-To make new build
+**New build**
 ```
 npm run build
 ```
 
-To run dev server
+**Run dev server**
 ```
 npm run dev
 ```
 
-To run test
+**Run test**
 ```
 npm run test
 ```
