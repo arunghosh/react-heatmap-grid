@@ -1,5 +1,7 @@
 # react-heatmap-grid
 
+[![Build Status](https://travis-ci.org/arunghosh/react-heatmap-grid.svg?branch=master)](https://travis-ci.org/arunghosh/react-heatmap-grid)
+
 A React component for headmap in grid layout using `div`.
 
 ![alt tag](https://github.com/arunghosh/react-heatmap-grid/raw/master/docs/screenshot.png)
