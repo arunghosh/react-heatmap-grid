@@ -2,12 +2,12 @@
 
 A React component for headmap in grid layout using `div`.
 
-![alt tag](https://github.com/arunghosh/react-time-line/raw/master/docs/screenshot.png)
+![alt tag](https://github.com/arunghosh/react-heatmap-grid/raw/master/docs/screenshot.png)
 
 ## Installation
 
 ```
-npm install react-heatmap-grid
+yarn add react-heatmap-grid
 ```
 
 ## Usage
