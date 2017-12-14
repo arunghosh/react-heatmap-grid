@@ -1,8 +1,11 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import HeatMap from '../src/HeatMap';
 import DataGrid from '../src/DataGrid';
 import XLabels from '../src/XLabels';
+
+configure({ adapter: new Adapter() });
 
 const xLabels = new Array (24).fill (0).map ((_, i) => `${i}`);
 const yLabels = ['Sun', 'Mon', 'Tue'];
