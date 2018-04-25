@@ -29,7 +29,7 @@ const DataGrid = ({
                 margin: '1px 1px 0 0',
                 height,
                 flex: 1,
-                opacity: (data[yi][xi] - min) / (max - min),
+                opacity: (data[yi][xi] - min) / (max - min) || 0,
               }}
             >
               &nbsp;
