@@ -13,7 +13,11 @@
     "type": "git",
     "url": "https://github.com/arunghosh/react-heatmap-grid"
   },
-  "keywords": ["heatmap", "react", "component"],
+  "keywords": [
+    "heatmap",
+    "react",
+    "component"
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.23.1",
