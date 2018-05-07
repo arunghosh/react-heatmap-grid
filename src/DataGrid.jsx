@@ -9,6 +9,7 @@ const DataGrid = ({
   xLabelWidth,
   background,
   height,
+  yLabelTextAlign,
 }) => {
   const flatArray = data.reduce((i, o) => [...o, ...i], []);
   const max = Math.max(...flatArray);
@@ -18,7 +19,7 @@ const DataGrid = ({
       {yLabels.map((y, yi) => (
         <div key={y} style={{display: 'flex'}}>
           <FixedBox width={xLabelWidth}>
-            <div style={{textAlign: 'right', paddingRight: '5px', paddingTop:`${height/3.7}px`}}>{y}</div>
+            <div style={{textAlign: yLabelTextAlign, paddingRight: '5px', paddingTop:`${height/3.7}px`}}>{y}</div>
           </FixedBox>
           {xLabels.map((x, xi) => (
             <div
@@ -52,6 +53,7 @@ DataGrid.propTypes = {
   background: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   xLabelWidth: PropTypes.number.isRequired,
+  yLabelTextAlign: PropTypes.string.isRequired,
 };
 
 export default DataGrid;

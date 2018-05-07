@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import XLabels from './XLabels';
 import DataGrid from './DataGrid';
 
-function HeatMap({xLabels, yLabels, data, background, height, xLabelWidth}) {
+function HeatMap({xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign}) {
   return (
     <div>
       <XLabels labels={xLabels} width={xLabelWidth} />
       <DataGrid
-        {...{xLabels, yLabels, data, background, height, xLabelWidth}}
+        {...{xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign}}
       />
     </div>
   );
@@ -25,12 +25,14 @@ HeatMap.propTypes = {
   background: PropTypes.string,
   height: PropTypes.number,
   xLabelWidth: PropTypes.number,
+  yLabelTextAlign: PropTypes.string,
 };
 
 HeatMap.defaultProps = {
   background: '#329fff',
   height: 30,
   xLabelWidth: 60,
+  yLabelTextAlign: 'right',
 };
 
 export default HeatMap;
