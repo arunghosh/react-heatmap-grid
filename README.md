@@ -48,7 +48,7 @@ ReactDOM.render(
 |height|number|Height of each cell of the heatmap in px|30|
 |xLabelWidth|number|Width of the x label area in pixel|60|
 |yLabelTextAlign|string|text alignment of the yLabels|right|
-
+|unit|string|unit to dislay next to the value on hover||
 
 
 ### For developers
