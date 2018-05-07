@@ -771,13 +771,14 @@ function HeatMap(_ref) {
       background = _ref.background,
       height = _ref.height,
       xLabelWidth = _ref.xLabelWidth,
-      yLabelTextAlign = _ref.yLabelTextAlign;
+      yLabelTextAlign = _ref.yLabelTextAlign,
+      unit = _ref.unit;
 
   return _react2.default.createElement(
     'div',
     null,
     _react2.default.createElement(_XLabels2.default, { labels: xLabels, width: xLabelWidth }),
-    _react2.default.createElement(_DataGrid2.default, { xLabels: xLabels, yLabels: yLabels, data: data, background: background, height: height, xLabelWidth: xLabelWidth, yLabelTextAlign: yLabelTextAlign })
+    _react2.default.createElement(_DataGrid2.default, { xLabels: xLabels, yLabels: yLabels, data: data, background: background, height: height, xLabelWidth: xLabelWidth, yLabelTextAlign: yLabelTextAlign, unit: unit })
   );
 }
 
@@ -787,14 +788,17 @@ HeatMap.propTypes = {
   data: _propTypes2.default.arrayOf(_propTypes2.default.array).isRequired,
   background: _propTypes2.default.string,
   height: _propTypes2.default.number,
-  xLabelWidth: _propTypes2.default.number
+  xLabelWidth: _propTypes2.default.number,
+  yLabelTextAlign: _propTypes2.default.string,
+  unit: _propTypes2.default.string
 };
 
 HeatMap.defaultProps = {
   background: '#329fff',
   height: 30,
   xLabelWidth: 60,
-  yLabelTextAlign: 'right'
+  yLabelTextAlign: 'right',
+  unit: ''
 };
 
 exports.default = HeatMap;
@@ -833,7 +837,8 @@ var DataGrid = function DataGrid(_ref) {
       xLabelWidth = _ref.xLabelWidth,
       background = _ref.background,
       height = _ref.height,
-      yLabelTextAlign = _ref.yLabelTextAlign;
+      yLabelTextAlign = _ref.yLabelTextAlign,
+      unit = _ref.unit;
 
   var flatArray = data.reduce(function (i, o) {
     return [].concat(_toConsumableArray(o), _toConsumableArray(i));
@@ -860,7 +865,7 @@ var DataGrid = function DataGrid(_ref) {
           return _react2.default.createElement(
             'div',
             {
-              title: '' + data[yi][xi],
+              title: '' + data[yi][xi] + ' ' + unit,
               key: x + '_' + y,
               style: {
                 background: background,
@@ -885,7 +890,8 @@ DataGrid.propTypes = {
   background: _propTypes2.default.string.isRequired,
   height: _propTypes2.default.number.isRequired,
   xLabelWidth: _propTypes2.default.number.isRequired,
-  yLabelTextAlign: _propTypes2.default.string.isRequired
+  yLabelTextAlign: _propTypes2.default.string.isRequired,
+  unit: _propTypes2.default.string.isRequired
 };
 
 exports.default = DataGrid;
