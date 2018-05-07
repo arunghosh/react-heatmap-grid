@@ -19,7 +19,7 @@ yarn add react-heatmap-grid
 |Name |Type|Sample|
 |---|---|---|
 |`xLabels`|Array of string|`['1am', '2am', '3am']`|
-|`yLables`|Array of string|`['Sun', 'Mon']`|
+|`yLabels`|Array of string|`['Sun', 'Mon']`|
 |`data`|2D Array of numbers having `yLabels.length` rows and `xLabels.length` rows|`[[2,3,5][5,6,9]]`| 
 
 ```javascript
@@ -47,6 +47,7 @@ ReactDOM.render(
 |background|string|The base color for the heatmap|#329fff|
 |height|number|Height of each cell of the heatmap in px|30|
 |xLabelWidth|number|Width of the x label area in pixel|60|
+|yLabelTextAlign|string|text alignment of the yLabels|right|
 
 
 
