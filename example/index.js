@@ -4,7 +4,7 @@ import HeatMap from '../src';
 
 const xLabels = new Array(24).fill(0).map((_, i) => `${i}`);
 
-// Display only EVENT labels
+// Display only even labels
 const xLabelsVisibility = new Array(24).fill(0).map((_, i) => i % 2 === 0 ? true : false);
 
 const yLabels = ['Sun', 'Mon', 'Tue'];
