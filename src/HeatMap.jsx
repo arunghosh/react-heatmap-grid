@@ -1,21 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import XLabels from './XLabels';
-import DataGrid from './DataGrid';
+import React from "react";
+import PropTypes from "prop-types";
+import XLabels from "./XLabels";
+import DataGrid from "./DataGrid";
 
-function HeatMap({ xLabels, yLabels, data, background, height, xLabelWidth, xLabelsLocation, yLabelTextAlign, xLabelsVisibility, unit, displayYLabels }) {
+function HeatMap({
+  xLabels,
+  yLabels,
+  data,
+  background,
+  height,
+  xLabelWidth,
+  xLabelsLocation,
+  yLabelTextAlign,
+  xLabelsVisibility,
+  unit,
+  displayYLabels,
+}) {
+  const xLabelsEle = (
+    <XLabels
+      labels={xLabels}
+      width={xLabelWidth}
+      labelsVisibility={xLabelsVisibility}
+    />
+  );
   return (
     <div>
-      {xLabelsLocation === 'top' &&
-        <XLabels labels={xLabels} width={xLabelWidth} labelsVisibility={xLabelsVisibility} />
-      }
+      {xLabelsLocation === "top" && xLabelsEle}
       <DataGrid
-        {...{ xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign, unit, xLabelsLocation, displayYLabels }}
+        {...{
+          xLabels,
+          yLabels,
+          data,
+          background,
+          height,
+          xLabelWidth,
+          yLabelTextAlign,
+          unit,
+          xLabelsLocation,
+          displayYLabels,
+        }}
       />
-      {xLabelsLocation === 'bottom' &&
-        <XLabels labels={xLabels} width={xLabelWidth} labelsVisibility={xLabelsVisibility} />
-      }
-
+      {xLabelsLocation === "bottom" && xLabelsEle}
     </div>
   );
 }
@@ -31,7 +56,7 @@ HeatMap.propTypes = {
   background: PropTypes.string,
   height: PropTypes.number,
   xLabelWidth: PropTypes.number,
-  xLabelsLocation: PropTypes.oneOf(['top', 'bottom']),
+  xLabelsLocation: PropTypes.oneOf(["top", "bottom"]),
   xLabelsVisibility: PropTypes.arrayOf(PropTypes.bool),
   yLabelTextAlign: PropTypes.string,
   displayYLabels: PropTypes.bool,
@@ -39,14 +64,14 @@ HeatMap.propTypes = {
 };
 
 HeatMap.defaultProps = {
-  background: '#329fff',
+  background: "#329fff",
   height: 30,
   xLabelWidth: 60,
-  yLabelTextAlign: 'right',
-  unit: '',
-  xLabelsLocation: 'top',
+  yLabelTextAlign: "right",
+  unit: "",
+  xLabelsLocation: "top",
   xLabelsVisibility: null,
-  displayYLabels: true
+  displayYLabels: true,
 };
 
 export default HeatMap;
