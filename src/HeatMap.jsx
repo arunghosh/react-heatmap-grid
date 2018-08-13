@@ -3,13 +3,19 @@ import PropTypes from 'prop-types';
 import XLabels from './XLabels';
 import DataGrid from './DataGrid';
 
-function HeatMap({xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign, unit}) {
+function HeatMap({ xLabels, yLabels, data, background, height, xLabelWidth, xLabelsLocation, yLabelTextAlign, xLabelsVisibility, unit }) {
   return (
     <div>
-      <XLabels labels={xLabels} width={xLabelWidth} />
+      {xLabelsLocation === 'top' &&
+        <XLabels labels={xLabels} width={xLabelWidth} labelsVisibility={xLabelsVisibility} />
+      }
       <DataGrid
-        {...{xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign, unit}}
+        {...{ xLabels, yLabels, data, background, height, xLabelWidth, yLabelTextAlign, unit, xLabelsLocation }}
       />
+      {xLabelsLocation === 'bottom' &&
+        <XLabels labels={xLabels} width={xLabelWidth} labelsVisibility={xLabelsVisibility} />
+      }
+
     </div>
   );
 }
@@ -25,6 +31,8 @@ HeatMap.propTypes = {
   background: PropTypes.string,
   height: PropTypes.number,
   xLabelWidth: PropTypes.number,
+  xLabelsLocation: PropTypes.oneOf(['top', 'bottom']),
+  xLabelsVisibility: PropTypes.arrayOf(PropTypes.bool),
   yLabelTextAlign: PropTypes.string,
   unit: PropTypes.string,
 };
@@ -35,6 +43,8 @@ HeatMap.defaultProps = {
   xLabelWidth: 60,
   yLabelTextAlign: 'right',
   unit: '',
+  xLabelsLocation: 'top',
+  xLabelsVisibility: null
 };
 
 export default HeatMap;
