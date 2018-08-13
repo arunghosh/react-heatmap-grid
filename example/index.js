@@ -18,6 +18,7 @@ ReactDOM.render(
     yLabels={yLabels}
     xLabelsLocation={'bottom'}
     xLabelsVisibility={xLabelsVisibility}
+    xLabelWidth={50}
     data={data}
   />,
   document.getElementById('app')
