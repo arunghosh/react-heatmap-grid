@@ -12,6 +12,7 @@ ReactDOM.render(
   <HeatMap
     xLabels={xLabels}
     yLabels={yLabels}
+    xLabelsLocation={'bottom'}
     data={data}
   />,
   document.getElementById('app')

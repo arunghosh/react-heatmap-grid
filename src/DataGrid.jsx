@@ -18,9 +18,9 @@ const DataGrid = ({
   return (
     <div>
       {yLabels.map((y, yi) => (
-        <div key={y} style={{display: 'flex'}}>
+        <div key={y} style={{ display: 'flex' }}>
           <FixedBox width={xLabelWidth}>
-            <div style={{textAlign: yLabelTextAlign, paddingRight: '5px', paddingTop:`${height/3.7}px`}}>{y}</div>
+            <div style={{ textAlign: yLabelTextAlign, paddingRight: '5px', paddingTop: `${height / 3.7}px` }}>{y}</div>
           </FixedBox>
           {xLabels.map((x, xi) => (
             <div
