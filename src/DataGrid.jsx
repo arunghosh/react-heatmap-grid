@@ -24,7 +24,7 @@ const DataGrid = ({
           </FixedBox>
           {xLabels.map((x, xi) => (
             <div
-              title={`${data[yi][xi]}` + ' ' + unit}
+              title={`${data[yi][xi]} ${unit}`}
               key={`${x}_${y}`}
               style={{
                 background,
