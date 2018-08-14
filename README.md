@@ -12,6 +12,13 @@ A React component for heatmap in grid layout using `div`.
 yarn add react-heatmap-grid
 ```
 
+or 
+
+```
+npm install react-heatmap-grid --save
+```
+
+
 ## Usage
 
 **Mandatory fields** 
@@ -48,6 +55,8 @@ ReactDOM.render(
 |height|number|Height of each cell of the heatmap in px|30|
 |xLabelWidth|number|Width of the x label area in pixel|60|
 |yLabelTextAlign|string|text alignment of the yLabels|right|
+|xLabelsLocation|string|Location of y labels. It can be top or bottom|top|
+|xLabelsVisibility|`[boolean]`|Array of bool conveying which x labels to display. For ex: `[true, false, true, false]` means the 1st and the 3rd labels will be displayed and the 2nd and 4th will be hidden||
 |unit|string|unit to dislay next to the value on hover||
 
 
