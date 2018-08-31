@@ -16,6 +16,7 @@ function HeatMap({
   unit,
   displayYLabels,
   onClick,
+  squares,
 }) {
   let cursor = '';
   if ( onClick !== undefined) {
@@ -26,6 +27,8 @@ function HeatMap({
       labels={xLabels}
       width={xLabelWidth}
       labelsVisibility={xLabelsVisibility}
+      height={height}
+      squares={squares}
     />
   );
   return (
@@ -44,7 +47,9 @@ function HeatMap({
           xLabelsLocation,
           displayYLabels,
           onClick,
-          cursor
+          cursor,
+          paddingRight,
+          squares
         }}
       />
       {xLabelsLocation === "bottom" && xLabelsEle}
@@ -69,6 +74,7 @@ HeatMap.propTypes = {
   displayYLabels: PropTypes.bool,
   unit: PropTypes.string,
   onClick: PropTypes.func,
+  squares: PropTypes.bool,
 };
 
 HeatMap.defaultProps = {
@@ -81,6 +87,7 @@ HeatMap.defaultProps = {
   xLabelsVisibility: null,
   displayYLabels: true,
   onClick: undefined,
+  squares:false,
 };
 
 export default HeatMap;

@@ -14,6 +14,7 @@ const DataGrid = ({
   displayYLabels,
   onClick,
   cursor,
+  squares,
 }) => {
   const flatArray = data.reduce((i, o) => [...o, ...i], []);
   const max = Math.max(...flatArray);
@@ -35,7 +36,8 @@ const DataGrid = ({
                 background,
                 margin: '1px 1px 0 0',
                 height,
-                flex: 1,
+                width: squares ? `${height}px` : undefined,
+                flex: squares ? 'none': 1,
                 opacity: (data[yi][xi] - min) / (max - min) || 0,
               }}
             >
@@ -64,13 +66,14 @@ DataGrid.propTypes = {
   displayYLabels: PropTypes.bool,
   onClick: PropTypes.func,
   cursor: PropTypes.string,
+  squares: PropTypes.bool,
 };
 
 DataGrid.defaultProps = {
   displayYLabels: true,
   cursor: '',
   onClick: () => {},
-  squares: false
+  squares: false,
 };
 
 export default DataGrid;
