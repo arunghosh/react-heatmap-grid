@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import FixedBox from "./FixedBox";
 
 function XLabels({ labels, width, labelsVisibility }) {
-  console.log(labelsVisibility);
   return (
     <div style={{ display: "flex" }}>
       <FixedBox width={width} />
