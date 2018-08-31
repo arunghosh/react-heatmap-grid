@@ -11,7 +11,9 @@ const DataGrid = ({
   height,
   yLabelTextAlign,
   unit,
-  displayYLabels
+  displayYLabels,
+  onClick,
+  cursor,
 }) => {
   const flatArray = data.reduce((i, o) => [...o, ...i], []);
   const max = Math.max(...flatArray);
@@ -25,9 +27,11 @@ const DataGrid = ({
           </FixedBox>
           {xLabels.map((x, xi) => (
             <div
+              onClick={onClick.bind(this, xi, yi)}
               title={`${data[yi][xi]} ${unit}`}
               key={`${x}_${y}`}
               style={{
+                cursor: `${cursor}`,
                 background,
                 margin: '1px 1px 0 0',
                 height,
@@ -58,10 +62,15 @@ DataGrid.propTypes = {
   yLabelTextAlign: PropTypes.string.isRequired,
   unit: PropTypes.string.isRequired,
   displayYLabels: PropTypes.bool,
+  onClick: PropTypes.func,
+  cursor: PropTypes.string,
 };
 
 DataGrid.defaultProps = {
-  displayYLabels: true
+  displayYLabels: true,
+  cursor: '',
+  onClick: () => {},
+  squares: false
 };
 
 export default DataGrid;

@@ -15,7 +15,12 @@ function HeatMap({
   xLabelsVisibility,
   unit,
   displayYLabels,
+  onClick,
 }) {
+  let cursor = '';
+  if ( onClick !== undefined) {
+    cursor='pointer'
+  }
   const xLabelsEle = (
     <XLabels
       labels={xLabels}
@@ -38,6 +43,8 @@ function HeatMap({
           unit,
           xLabelsLocation,
           displayYLabels,
+          onClick,
+          cursor
         }}
       />
       {xLabelsLocation === "bottom" && xLabelsEle}
@@ -61,6 +68,7 @@ HeatMap.propTypes = {
   yLabelTextAlign: PropTypes.string,
   displayYLabels: PropTypes.bool,
   unit: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 HeatMap.defaultProps = {
@@ -72,6 +80,7 @@ HeatMap.defaultProps = {
   xLabelsLocation: "top",
   xLabelsVisibility: null,
   displayYLabels: true,
+  onClick: undefined,
 };
 
 export default HeatMap;

@@ -53,6 +53,7 @@ ReactDOM.render(
 |---|---|---|---|
 |background|string|The base color for the heatmap|#329fff|
 |height|number|Height of each cell of the heatmap in px|30|
+|onClick|function|added handler to cell click|undefined|
 |xLabelWidth|number|Width of the x label area in pixel|60|
 |yLabelTextAlign|string|text alignment of the yLabels|right|
 |xLabelsLocation|string|Location of y labels. It can be top or bottom|top|
