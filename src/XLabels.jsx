@@ -8,7 +8,7 @@ function XLabels({ labels, width, labelsVisibility,squares, height, paddingRight
     squareWidth = height +1;
   }
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{display: 'flex', paddingRight: `${paddingRight}px`, paddingTop: `${paddingTop}px`}}>
       <FixedBox width={width} />
       {labels.map((x, i) => (
         <div
@@ -36,12 +36,16 @@ XLabels.propTypes = {
   width: PropTypes.number.isRequired,
   squares: PropTypes.bool,
   height: PropTypes.number,
+  paddingRight: PropTypes.number,
+  paddingTop: PropTypes.number,
 };
 
 XLabels.defaultProps = {
   labelsVisibility: null,
   squares: false,
   height: 30,
+  paddingRight: 0,
+  paddingTop: 0,
 };
 
 export default XLabels;
