@@ -57,7 +57,7 @@ ReactDOM.render(
 |yLabelTextAlign|string|text alignment of the yLabels|right|
 |xLabelsLocation|string|Location of y labels. It can be top or bottom|top|
 |xLabelsVisibility|`[boolean]`|Array of bool conveying which x labels to display. For ex: `[true, false, true, false]` means the 1st and the 3rd labels will be displayed and the 2nd and 4th will be hidden||
-|unit|string|unit to dislay next to the value on hover||
+|unit|string|unit to display next to the value on hover||
 
 
 ### For developers
