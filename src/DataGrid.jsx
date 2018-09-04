@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FixedBox from './FixedBox';
+import React from "react";
+import PropTypes from "prop-types";
+import FixedBox from "./FixedBox";
 
 const DataGrid = ({
   xLabels,
@@ -22,9 +22,17 @@ const DataGrid = ({
   return (
     <div>
       {yLabels.map((y, yi) => (
-        <div key={y} style={{display: 'flex'}}>
+        <div key={y} style={{ display: "flex" }}>
           <FixedBox width={xLabelWidth}>
-            <div style={{ textAlign: yLabelTextAlign, paddingRight: '5px', paddingTop: `${height / 3.7}px` }}>{displayYLabels && y}</div>
+            <div
+              style={{
+                textAlign: yLabelTextAlign,
+                paddingRight: "5px",
+                paddingTop: `${height / 3.7}px`,
+              }}
+            >
+              {displayYLabels && y}
+            </div>
           </FixedBox>
           {xLabels.map((x, xi) => (
             <div
@@ -34,10 +42,10 @@ const DataGrid = ({
               style={{
                 cursor: `${cursor}`,
                 background,
-                margin: '1px 1px 0 0',
+                margin: "1px 1px 0 0",
                 height,
                 width: squares ? `${height}px` : undefined,
-                flex: squares ? 'none': 1,
+                flex: squares ? "none" : 1,
                 opacity: (data[yi][xi] - min) / (max - min) || 0,
               }}
             >
@@ -71,9 +79,9 @@ DataGrid.propTypes = {
 
 DataGrid.defaultProps = {
   displayYLabels: true,
-  cursor: '',
+  cursor: "",
   onClick: () => {},
-  squares: false
+  squares: false,
 };
 
 export default DataGrid;

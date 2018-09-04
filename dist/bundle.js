@@ -629,16 +629,16 @@ var FixedBox = function FixedBox(_ref) {
       width = _ref.width;
 
   return _react2.default.createElement(
-    'div',
-    { style: { flex: '0 0 ' + width + 'px' } },
-    ' ',
+    "div",
+    { style: { flex: "0 0 " + width + "px" } },
+    " ",
     children,
-    ' '
+    " "
   );
 };
 
 FixedBox.defaultProps = {
-  children: ' '
+  children: " "
 };
 
 FixedBox.propTypes = {
@@ -779,12 +779,20 @@ function HeatMap(_ref) {
       yLabelTextAlign = _ref.yLabelTextAlign,
       xLabelsVisibility = _ref.xLabelsVisibility,
       unit = _ref.unit,
-      displayYLabels = _ref.displayYLabels;
+      displayYLabels = _ref.displayYLabels,
+      onClick = _ref.onClick,
+      squares = _ref.squares;
 
+  var cursor = "";
+  if (onClick !== undefined) {
+    cursor = "pointer";
+  }
   var xLabelsEle = _react2.default.createElement(_XLabels2.default, {
     labels: xLabels,
     width: xLabelWidth,
-    labelsVisibility: xLabelsVisibility
+    labelsVisibility: xLabelsVisibility,
+    height: height,
+    squares: squares
   });
   return _react2.default.createElement(
     "div",
@@ -800,7 +808,10 @@ function HeatMap(_ref) {
       yLabelTextAlign: yLabelTextAlign,
       unit: unit,
       xLabelsLocation: xLabelsLocation,
-      displayYLabels: displayYLabels
+      displayYLabels: displayYLabels,
+      onClick: onClick,
+      cursor: cursor,
+      squares: squares
     }),
     xLabelsLocation === "bottom" && xLabelsEle
   );
@@ -817,7 +828,9 @@ HeatMap.propTypes = {
   xLabelsVisibility: _propTypes2.default.arrayOf(_propTypes2.default.bool),
   yLabelTextAlign: _propTypes2.default.string,
   displayYLabels: _propTypes2.default.bool,
-  unit: _propTypes2.default.string
+  unit: _propTypes2.default.string,
+  onClick: _propTypes2.default.func,
+  squares: _propTypes2.default.bool
 };
 
 HeatMap.defaultProps = {
@@ -828,7 +841,9 @@ HeatMap.defaultProps = {
   unit: "",
   xLabelsLocation: "top",
   xLabelsVisibility: null,
-  displayYLabels: true
+  displayYLabels: true,
+  onClick: undefined,
+  squares: false
 };
 
 exports.default = HeatMap;
@@ -869,7 +884,10 @@ var DataGrid = function DataGrid(_ref) {
       height = _ref.height,
       yLabelTextAlign = _ref.yLabelTextAlign,
       unit = _ref.unit,
-      displayYLabels = _ref.displayYLabels;
+      displayYLabels = _ref.displayYLabels,
+      onClick = _ref.onClick,
+      cursor = _ref.cursor,
+      squares = _ref.squares;
 
   var flatArray = data.reduce(function (i, o) {
     return [].concat(_toConsumableArray(o), _toConsumableArray(i));
@@ -877,36 +895,45 @@ var DataGrid = function DataGrid(_ref) {
   var max = Math.max.apply(Math, _toConsumableArray(flatArray));
   var min = Math.min.apply(Math, _toConsumableArray(flatArray));
   return _react2.default.createElement(
-    'div',
+    "div",
     null,
     yLabels.map(function (y, yi) {
       return _react2.default.createElement(
-        'div',
-        { key: y, style: { display: 'flex' } },
+        "div",
+        { key: y, style: { display: "flex" } },
         _react2.default.createElement(
           _FixedBox2.default,
           { width: xLabelWidth },
           _react2.default.createElement(
-            'div',
-            { style: { textAlign: yLabelTextAlign, paddingRight: '5px', paddingTop: height / 3.7 + 'px' } },
+            "div",
+            {
+              style: {
+                textAlign: yLabelTextAlign,
+                paddingRight: "5px",
+                paddingTop: height / 3.7 + "px"
+              }
+            },
             displayYLabels && y
           )
         ),
         xLabels.map(function (x, xi) {
           return _react2.default.createElement(
-            'div',
+            "div",
             {
-              title: data[yi][xi] + ' ' + unit,
-              key: x + '_' + y,
+              onClick: onClick.bind(undefined, xi, yi),
+              title: data[yi][xi] + " " + unit,
+              key: x + "_" + y,
               style: {
+                cursor: "" + cursor,
                 background: background,
-                margin: '1px 1px 0 0',
+                margin: "1px 1px 0 0",
                 height: height,
-                flex: 1,
+                width: squares ? height + "px" : undefined,
+                flex: squares ? "none" : 1,
                 opacity: (data[yi][xi] - min) / (max - min) || 0
               }
             },
-            '\xA0'
+            "\xA0"
           );
         })
       );
@@ -923,11 +950,17 @@ DataGrid.propTypes = {
   xLabelWidth: _propTypes2.default.number.isRequired,
   yLabelTextAlign: _propTypes2.default.string.isRequired,
   unit: _propTypes2.default.string.isRequired,
-  displayYLabels: _propTypes2.default.bool
+  displayYLabels: _propTypes2.default.bool,
+  onClick: _propTypes2.default.func,
+  cursor: _propTypes2.default.string,
+  squares: _propTypes2.default.bool
 };
 
 DataGrid.defaultProps = {
-  displayYLabels: true
+  displayYLabels: true,
+  cursor: "",
+  onClick: function onClick() {},
+  squares: false
 };
 
 exports.default = DataGrid;
@@ -960,9 +993,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function XLabels(_ref) {
   var labels = _ref.labels,
       width = _ref.width,
-      labelsVisibility = _ref.labelsVisibility;
+      labelsVisibility = _ref.labelsVisibility,
+      squares = _ref.squares,
+      height = _ref.height;
 
-  console.log(labelsVisibility);
   return _react2.default.createElement(
     "div",
     { style: { display: "flex" } },
@@ -973,8 +1007,9 @@ function XLabels(_ref) {
         {
           key: x,
           style: {
-            flex: 1,
+            flex: squares ? "none" : 1,
             textAlign: "center",
+            width: squares ? height + 1 + "px" : "undefined",
             visibility: labelsVisibility && !labelsVisibility[i] ? "hidden" : "visible"
           }
         },
@@ -987,11 +1022,15 @@ function XLabels(_ref) {
 XLabels.propTypes = {
   labels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
   labelsVisibility: _propTypes2.default.arrayOf(_propTypes2.default.bool),
-  width: _propTypes2.default.number.isRequired
+  width: _propTypes2.default.number.isRequired,
+  squares: _propTypes2.default.bool,
+  height: _propTypes2.default.number
 };
 
 XLabels.defaultProps = {
-  labelsVisibility: null
+  labelsVisibility: null,
+  squares: false,
+  height: 30
 };
 
 exports.default = XLabels;

@@ -2,21 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import FixedBox from "./FixedBox";
 
-function XLabels({ labels, width, labelsVisibility,squares, height}) {
-  let squareWidth;
-  if (squares) {
-    squareWidth = height +1;
-  }
+function XLabels({ labels, width, labelsVisibility, squares, height }) {
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{ display: "flex" }}>
       <FixedBox width={width} />
       {labels.map((x, i) => (
         <div
           key={x}
           style={{
-            flex: squares ? 'none': 1,
+            flex: squares ? "none" : 1,
             textAlign: "center",
-            width: squares ?  `${squareWidth}px` : 'undefined',
+            width: squares ? `${height + 1}px` : "undefined",
             visibility:
               labelsVisibility && !labelsVisibility[i] ? "hidden" : "visible",
           }}

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const FixedBox = ({children, width}) => {
-  return <div style={{flex: `0 0 ${width}px`}}> {children} </div>;
+const FixedBox = ({ children, width }) => {
+  return <div style={{ flex: `0 0 ${width}px` }}> {children} </div>;
 };
 
 FixedBox.defaultProps = {
-  children: ' ',
+  children: " ",
 };
 
 FixedBox.propTypes = {

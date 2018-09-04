@@ -16,11 +16,11 @@ function HeatMap({
   unit,
   displayYLabels,
   onClick,
-  squares
+  squares,
 }) {
-  let cursor = '';
-  if ( onClick !== undefined) {
-    cursor='pointer'
+  let cursor = "";
+  if (onClick !== undefined) {
+    cursor = "pointer";
   }
   const xLabelsEle = (
     <XLabels
@@ -48,7 +48,7 @@ function HeatMap({
           displayYLabels,
           onClick,
           cursor,
-          squares
+          squares,
         }}
       />
       {xLabelsLocation === "bottom" && xLabelsEle}
@@ -86,7 +86,7 @@ HeatMap.defaultProps = {
   xLabelsVisibility: null,
   displayYLabels: true,
   onClick: undefined,
-  squares:false,
+  squares: false,
 };
 
 export default HeatMap;
