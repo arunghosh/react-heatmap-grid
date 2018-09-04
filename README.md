@@ -53,7 +53,7 @@ ReactDOM.render(
 |---|---|---|---|
 |background|string|The base color for the heatmap|#329fff|
 |height|number|Height of each cell of the heatmap in px|30|
-|onClick|function|added handler to cell click|undefined|
+|onClick|function|adds an handler to cell click|undefined|
 |squares|boolean|cells become squares if true|false|
 |paddingRight|number|adds right padding to the heatmap in px|null|
 |paddingTop|number|adds top padding to the heatmap in px|null|
