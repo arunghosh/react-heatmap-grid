@@ -16,10 +16,7 @@ function HeatMap({
   unit,
   displayYLabels,
   onClick,
-  squares,
-  paddingRight,
-  paddingTop,
-  paddingBottom,
+  squares
 }) {
   let cursor = '';
   if ( onClick !== undefined) {
@@ -32,12 +29,10 @@ function HeatMap({
       labelsVisibility={xLabelsVisibility}
       height={height}
       squares={squares}
-      paddingTop={paddingTop}
-      paddingRight={paddingRight}
     />
   );
   return (
-    <div style={{paddingBottom: `${paddingBottom}px`}}>
+    <div>
       {xLabelsLocation === "top" && xLabelsEle}
       <DataGrid
         {...{
@@ -53,7 +48,6 @@ function HeatMap({
           displayYLabels,
           onClick,
           cursor,
-          paddingRight,
           squares
         }}
       />
@@ -80,9 +74,6 @@ HeatMap.propTypes = {
   unit: PropTypes.string,
   onClick: PropTypes.func,
   squares: PropTypes.bool,
-  paddingRight: PropTypes.number,
-  paddingTop: PropTypes.number,
-  paddingBottom: PropTypes.number,
 };
 
 HeatMap.defaultProps = {
@@ -96,9 +87,6 @@ HeatMap.defaultProps = {
   displayYLabels: true,
   onClick: undefined,
   squares:false,
-  paddingRight: 0,
-  paddingTop: 0,
-  paddingBottom: 0,
 };
 
 export default HeatMap;
