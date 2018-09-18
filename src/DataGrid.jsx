@@ -49,7 +49,7 @@ const DataGrid = ({
             return (
               <div
                 onClick={onClick.bind(this, xi, yi)}
-                title={value && `${value} ${unit}`}
+                title={(value || value === 0) && `${value} ${unit}`}
                 key={`${x}_${y}`}
                 style={style}
               >
