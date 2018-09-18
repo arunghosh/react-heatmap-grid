@@ -15,6 +15,8 @@ const DataGrid = ({
   onClick,
   cursor,
   squares,
+  cellRender,
+  cellStyle,
 }) => {
   const flatArray = data.reduce((i, o) => [...o, ...i], []);
   const max = Math.max(...flatArray);
@@ -34,24 +36,29 @@ const DataGrid = ({
               {displayYLabels && y}
             </div>
           </FixedBox>
-          {xLabels.map((x, xi) => (
-            <div
-              onClick={onClick.bind(this, xi, yi)}
-              title={`${data[yi][xi]} ${unit}`}
-              key={`${x}_${y}`}
-              style={{
-                cursor: `${cursor}`,
-                background,
-                margin: "1px 1px 0 0",
-                height,
-                width: squares ? `${height}px` : undefined,
-                flex: squares ? "none" : 1,
-                opacity: (data[yi][xi] - min) / (max - min) || 0,
-              }}
-            >
-              &nbsp;
-            </div>
-          ))}
+          {xLabels.map((x, xi) => {
+            const value = data[yi][xi];
+            const style = Object.assign({}, cellStyle(background, value, min, max, data, xi, yi), {
+              cursor: `${cursor}`,
+              margin: "1px 1px 0 0",
+              height,
+              width: squares ? `${height}px` : undefined,
+              flex: squares ? "none" : 1,
+              textAlign: "center",
+            })
+            return (
+              <div
+                onClick={onClick.bind(this, xi, yi)}
+                title={value && `${value} ${unit}`}
+                key={`${x}_${y}`}
+                style={style}
+              >
+                <div style={{ paddingTop: `${height / 3.7}px` }}>
+                  {cellRender(value)}
+                </div>
+              </div>
+            )
+          })}
         </div>
       ))}
     </div>
@@ -75,6 +82,8 @@ DataGrid.propTypes = {
   onClick: PropTypes.func,
   cursor: PropTypes.string,
   squares: PropTypes.bool,
+  cellRender: PropTypes.func.isRequired,
+  cellStyle: PropTypes.func.isRequired,
 };
 
 DataGrid.defaultProps = {
