@@ -51,15 +51,17 @@ ReactDOM.render(
 
 |Name |Type|Description|Default Value|
 |---|---|---|---|
-|background|string|The base color for the heatmap|#329fff|
-|height|number|Height of each cell of the heatmap in px|30|
-|onClick|function|adds an handler to cell click|undefined|
-|squares|boolean|cells become squares if true|false|
-|xLabelWidth|number|Width of the x label area in pixel|60|
-|yLabelTextAlign|string|text alignment of the yLabels|right|
-|xLabelsLocation|string|Location of y labels. It can be top or bottom|top|
+|background|string|The base color for the heatmap|`"#329fff"`|
+|height|number|Height of each cell of the heatmap in px|`30`|
+|onClick|function|adds an handler to cell click|`undefined`|
+|squares|boolean|cells become squares if true|`false`|
+|xLabelWidth|number|Width of the x label area in pixel|`60`|
+|yLabelTextAlign|string|text alignment of the yLabels|`"right"`|
+|xLabelsLocation|string|Location of y labels. It can be top or bottom|`"top"`|
 |xLabelsVisibility|`[boolean]`|Array of bool conveying which x labels to display. For ex: `[true, false, true, false]` means the 1st and the 3rd labels will be displayed and the 2nd and 4th will be hidden||
 |unit|string|unit to display next to the value on hover||
+|cellRender|function|render custom content per cell|`<span>&nbsp;</span>`|
+|cellStyle|function|custom cell style - useful for using own colour scheme|`{ background, opacity }`|
 
 
 ### For developers
