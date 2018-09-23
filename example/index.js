@@ -26,6 +26,11 @@ ReactDOM.render(
     data={data}
     squares
     onClick={(x, y) => alert(`Clicked ${x}, ${y}`)}
+    cellStyle={(background, value, min, max, data, x, y) => ({
+      background: `rgb(66, 86, 244, ${1 - (max - value) / (max - min)})`,
+      fontSize: "11px",
+    })}
+    cellRender={value => value && `${value}%`}
   />,
   document.getElementById("app")
 );

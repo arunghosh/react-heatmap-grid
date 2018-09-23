@@ -93,11 +93,11 @@ HeatMap.defaultProps = {
   displayYLabels: true,
   onClick: undefined,
   squares: false,
-  cellRender: () => <span>&nbsp;</span>,
+  cellRender: () => null,
   cellStyle: (background, value, min, max) => ({
     background,
     opacity: (value - min) / (max - min) || 0,
-  })
+  }),
 };
 
 export default HeatMap;
