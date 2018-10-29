@@ -8,7 +8,7 @@ function XLabels({ labels, width, labelsVisibility, squares, height }) {
       <FixedBox width={width} />
       {labels.map((x, i) => (
         <div
-          key={x}
+          key={i}
           style={{
             flex: squares ? "none" : 1,
             textAlign: "center",
@@ -26,7 +26,7 @@ function XLabels({ labels, width, labelsVisibility, squares, height }) {
 
 XLabels.propTypes = {
   labels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
   ).isRequired,
   labelsVisibility: PropTypes.arrayOf(PropTypes.bool),
   width: PropTypes.number.isRequired,

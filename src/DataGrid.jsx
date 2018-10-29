@@ -24,7 +24,7 @@ const DataGrid = ({
   return (
     <div>
       {yLabels.map((y, yi) => (
-        <div key={y} style={{ display: "flex" }}>
+        <div key={yi} style={{ display: "flex" }}>
           <FixedBox width={xLabelWidth}>
             <div
               style={{
@@ -50,7 +50,7 @@ const DataGrid = ({
               <div
                 onClick={onClick.bind(this, xi, yi)}
                 title={(value || value === 0) && `${value} ${unit}`}
-                key={`${x}_${y}`}
+                key={`${xi}_${yi}`}
                 style={style}
               >
                 <div style={{ paddingTop: `${height / 3.7}px` }}>
@@ -67,10 +67,10 @@ const DataGrid = ({
 
 DataGrid.propTypes = {
   xLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
   ).isRequired,
   yLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
   ).isRequired,
   data: PropTypes.arrayOf(PropTypes.array).isRequired,
   background: PropTypes.string.isRequired,
