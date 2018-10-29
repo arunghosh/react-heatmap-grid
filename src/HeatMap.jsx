@@ -62,10 +62,10 @@ function HeatMap({
 
 HeatMap.propTypes = {
   xLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
   ).isRequired,
   yLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
   ).isRequired,
   data: PropTypes.arrayOf(PropTypes.array).isRequired,
   background: PropTypes.string,
