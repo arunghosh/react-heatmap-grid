@@ -818,8 +818,8 @@ function HeatMap(_ref) {
 }
 
 HeatMap.propTypes = {
-  xLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
-  yLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
+  xLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.object])).isRequired,
+  yLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.object])).isRequired,
   data: _propTypes2.default.arrayOf(_propTypes2.default.array).isRequired,
   background: _propTypes2.default.string,
   height: _propTypes2.default.number,
@@ -847,11 +847,7 @@ HeatMap.defaultProps = {
   onClick: undefined,
   squares: false,
   cellRender: function cellRender() {
-    return _react2.default.createElement(
-      "span",
-      null,
-      "\xA0"
-    );
+    return null;
   },
   cellStyle: function cellStyle(background, value, min, max) {
     return {
@@ -917,7 +913,7 @@ var DataGrid = function DataGrid(_ref) {
     yLabels.map(function (y, yi) {
       return _react2.default.createElement(
         "div",
-        { key: y, style: { display: "flex" } },
+        { key: yi, style: { display: "flex" } },
         _react2.default.createElement(
           _FixedBox2.default,
           { width: xLabelWidth },
@@ -948,7 +944,7 @@ var DataGrid = function DataGrid(_ref) {
             {
               onClick: onClick.bind(undefined, xi, yi),
               title: (value || value === 0) && value + " " + unit,
-              key: x + "_" + y,
+              key: xi + "_" + yi,
               style: style
             },
             _react2.default.createElement(
@@ -964,8 +960,8 @@ var DataGrid = function DataGrid(_ref) {
 };
 
 DataGrid.propTypes = {
-  xLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
-  yLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
+  xLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.object])).isRequired,
+  yLabels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.object])).isRequired,
   data: _propTypes2.default.arrayOf(_propTypes2.default.array).isRequired,
   background: _propTypes2.default.string.isRequired,
   height: _propTypes2.default.number.isRequired,
@@ -1029,7 +1025,7 @@ function XLabels(_ref) {
       return _react2.default.createElement(
         "div",
         {
-          key: x,
+          key: i,
           style: {
             flex: squares ? "none" : 1,
             textAlign: "center",
@@ -1044,7 +1040,7 @@ function XLabels(_ref) {
 }
 
 XLabels.propTypes = {
-  labels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])).isRequired,
+  labels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number, _propTypes2.default.object])).isRequired,
   labelsVisibility: _propTypes2.default.arrayOf(_propTypes2.default.bool),
   width: _propTypes2.default.number.isRequired,
   squares: _propTypes2.default.bool,
