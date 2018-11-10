@@ -931,14 +931,14 @@ var DataGrid = function DataGrid(_ref) {
         ),
         xLabels.map(function (x, xi) {
           var value = data[yi][xi];
-          var style = Object.assign({}, cellStyle(background, value, min, max, data, xi, yi), {
+          var style = Object.assign({
             cursor: "" + cursor,
             margin: "1px 1px 0 0",
             height: height,
             width: squares ? height + "px" : undefined,
             flex: squares ? "none" : 1,
             textAlign: "center"
-          });
+          }, cellStyle(background, value, min, max, data, xi, yi));
           return _react2.default.createElement(
             "div",
             {

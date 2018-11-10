@@ -38,14 +38,17 @@ const DataGrid = ({
           </FixedBox>
           {xLabels.map((x, xi) => {
             const value = data[yi][xi];
-            const style = Object.assign({}, cellStyle(background, value, min, max, data, xi, yi), {
-              cursor: `${cursor}`,
-              margin: "1px 1px 0 0",
-              height,
-              width: squares ? `${height}px` : undefined,
-              flex: squares ? "none" : 1,
-              textAlign: "center",
-            })
+            const style = Object.assign(
+              {
+                cursor: `${cursor}`,
+                margin: "1px 1px 0 0",
+                height,
+                width: squares ? `${height}px` : undefined,
+                flex: squares ? "none" : 1,
+                textAlign: "center",
+              },
+              cellStyle(background, value, min, max, data, xi, yi)
+            );
             return (
               <div
                 onClick={onClick.bind(this, xi, yi)}
@@ -57,7 +60,7 @@ const DataGrid = ({
                   {cellRender(value)}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       ))}

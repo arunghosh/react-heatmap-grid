@@ -1,6 +1,6 @@
 {
   "name": "react-heatmap-grid",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "React component for heatmap on grid layout",
   "main": "dist/bundle.js",
   "scripts": {
