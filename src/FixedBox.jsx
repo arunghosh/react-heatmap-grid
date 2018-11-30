@@ -15,3 +15,4 @@ FixedBox.propTypes = {
 };
 
 export default FixedBox;
+

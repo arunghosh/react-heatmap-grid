@@ -771,6 +771,7 @@ function HeatMap(_ref) {
       background = _ref.background,
       height = _ref.height,
       xLabelWidth = _ref.xLabelWidth,
+      yLabelWidth = _ref.yLabelWidth,
       xLabelsLocation = _ref.xLabelsLocation,
       yLabelTextAlign = _ref.yLabelTextAlign,
       xLabelsVisibility = _ref.xLabelsVisibility,
@@ -790,7 +791,8 @@ function HeatMap(_ref) {
     width: xLabelWidth,
     labelsVisibility: xLabelsVisibility,
     height: height,
-    squares: squares
+    squares: squares,
+    yWidth: yLabelWidth
   });
   return _react2.default.createElement(
     "div",
@@ -803,6 +805,7 @@ function HeatMap(_ref) {
       background: background,
       height: height,
       xLabelWidth: xLabelWidth,
+      yLabelWidth: yLabelWidth,
       yLabelTextAlign: yLabelTextAlign,
       unit: unit,
       xLabelsLocation: xLabelsLocation,
@@ -824,6 +827,7 @@ HeatMap.propTypes = {
   background: _propTypes2.default.string,
   height: _propTypes2.default.number,
   xLabelWidth: _propTypes2.default.number,
+  yLabelWidth: _propTypes2.default.number,
   xLabelsLocation: _propTypes2.default.oneOf(["top", "bottom"]),
   xLabelsVisibility: _propTypes2.default.arrayOf(_propTypes2.default.bool),
   yLabelTextAlign: _propTypes2.default.string,
@@ -839,6 +843,7 @@ HeatMap.defaultProps = {
   background: "#329fff",
   height: 30,
   xLabelWidth: 60,
+  yLabelWidth: 40,
   yLabelTextAlign: "right",
   unit: "",
   xLabelsLocation: "top",
@@ -891,6 +896,7 @@ var DataGrid = function DataGrid(_ref) {
       yLabels = _ref.yLabels,
       data = _ref.data,
       xLabelWidth = _ref.xLabelWidth,
+      yLabelWidth = _ref.yLabelWidth,
       background = _ref.background,
       height = _ref.height,
       yLabelTextAlign = _ref.yLabelTextAlign,
@@ -916,14 +922,15 @@ var DataGrid = function DataGrid(_ref) {
         { key: yi, style: { display: "flex" } },
         _react2.default.createElement(
           _FixedBox2.default,
-          { width: xLabelWidth },
+          { width: yLabelWidth },
           _react2.default.createElement(
             "div",
             {
               style: {
                 textAlign: yLabelTextAlign,
                 paddingRight: "5px",
-                paddingTop: height / 3.7 + "px"
+                paddingTop: height / 3.7 + "px",
+                width: yLabelWidth + "px"
               }
             },
             displayYLabels && y
@@ -966,6 +973,7 @@ DataGrid.propTypes = {
   background: _propTypes2.default.string.isRequired,
   height: _propTypes2.default.number.isRequired,
   xLabelWidth: _propTypes2.default.number.isRequired,
+  yLabelWidth: _propTypes2.default.number.isRequired,
   yLabelTextAlign: _propTypes2.default.string.isRequired,
   unit: _propTypes2.default.string.isRequired,
   displayYLabels: _propTypes2.default.bool,
@@ -1015,12 +1023,13 @@ function XLabels(_ref) {
       width = _ref.width,
       labelsVisibility = _ref.labelsVisibility,
       squares = _ref.squares,
-      height = _ref.height;
+      height = _ref.height,
+      yWidth = _ref.yWidth;
 
   return _react2.default.createElement(
     "div",
     { style: { display: "flex" } },
-    _react2.default.createElement(_FixedBox2.default, { width: width }),
+    _react2.default.createElement(_FixedBox2.default, { width: yWidth }),
     labels.map(function (x, i) {
       return _react2.default.createElement(
         "div",
