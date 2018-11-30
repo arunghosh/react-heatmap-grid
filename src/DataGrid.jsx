@@ -7,6 +7,7 @@ const DataGrid = ({
   yLabels,
   data,
   xLabelWidth,
+  yLabelWidth,
   background,
   height,
   yLabelTextAlign,
@@ -25,12 +26,13 @@ const DataGrid = ({
     <div>
       {yLabels.map((y, yi) => (
         <div key={yi} style={{ display: "flex" }}>
-          <FixedBox width={xLabelWidth}>
+          <FixedBox width={yLabelWidth}>
             <div
               style={{
                 textAlign: yLabelTextAlign,
                 paddingRight: "5px",
                 paddingTop: `${height / 3.7}px`,
+                width: `${yLabelWidth}px`
               }}
             >
               {displayYLabels && y}
@@ -79,6 +81,7 @@ DataGrid.propTypes = {
   background: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   xLabelWidth: PropTypes.number.isRequired,
+  yLabelWidth: PropTypes.number.isRequired,
   yLabelTextAlign: PropTypes.string.isRequired,
   unit: PropTypes.string.isRequired,
   displayYLabels: PropTypes.bool,
@@ -97,3 +100,4 @@ DataGrid.defaultProps = {
 };
 
 export default DataGrid;
+

@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import FixedBox from "./FixedBox";
 
-function XLabels({ labels, width, labelsVisibility, squares, height }) {
+function XLabels({ labels, width, labelsVisibility, squares, height, yWidth }) {
   return (
     <div style={{ display: "flex" }}>
-      <FixedBox width={width} />
+      <FixedBox width={yWidth} />
       {labels.map((x, i) => (
         <div
           key={i}
@@ -41,3 +41,4 @@ XLabels.defaultProps = {
 };
 
 export default XLabels;
+

@@ -56,6 +56,7 @@ ReactDOM.render(
 |onClick|function|Adds an handler to cell click|`undefined`|
 |squares|boolean|If set to `true` will render cells as square|`false`|
 |xLabelWidth|number|Width of the x label area in pixel|`60`|
+|yLabelWidth|number|Width of the y label area in pixel|`40`|
 |yLabelTextAlign|string|Text alignment of the yLabels|`"right"`|
 |xLabelsLocation|string|Location of y labels. It can be top or bottom|`"top"`|
 |xLabelsVisibility|`[boolean]`|Array of bool conveying which x labels to display. For ex: `[true, false, true, false]` means the 1st and the 3rd labels will be displayed and the 2nd and 4th will be hidden||

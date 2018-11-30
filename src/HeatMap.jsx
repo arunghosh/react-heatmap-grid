@@ -10,6 +10,7 @@ function HeatMap({
   background,
   height,
   xLabelWidth,
+  yLabelWidth,
   xLabelsLocation,
   yLabelTextAlign,
   xLabelsVisibility,
@@ -31,6 +32,7 @@ function HeatMap({
       labelsVisibility={xLabelsVisibility}
       height={height}
       squares={squares}
+      yWidth={yLabelWidth}
     />
   );
   return (
@@ -44,6 +46,7 @@ function HeatMap({
           background,
           height,
           xLabelWidth,
+          yLabelWidth,
           yLabelTextAlign,
           unit,
           xLabelsLocation,
@@ -71,6 +74,7 @@ HeatMap.propTypes = {
   background: PropTypes.string,
   height: PropTypes.number,
   xLabelWidth: PropTypes.number,
+  yLabelWidth: PropTypes.number,
   xLabelsLocation: PropTypes.oneOf(["top", "bottom"]),
   xLabelsVisibility: PropTypes.arrayOf(PropTypes.bool),
   yLabelTextAlign: PropTypes.string,
@@ -86,6 +90,7 @@ HeatMap.defaultProps = {
   background: "#329fff",
   height: 30,
   xLabelWidth: 60,
+  yLabelWidth: 40,
   yLabelTextAlign: "right",
   unit: "",
   xLabelsLocation: "top",
@@ -101,3 +106,4 @@ HeatMap.defaultProps = {
 };
 
 export default HeatMap;
+
