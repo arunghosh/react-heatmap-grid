@@ -59,7 +59,7 @@ const DataGrid = ({
                 style={style}
               >
                 <div style={{ paddingTop: `${height / 3.7}px` }}>
-                  {cellRender(value)}
+                  {cellRender(value, x, y)}
                 </div>
               </div>
             );
