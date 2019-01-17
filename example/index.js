@@ -30,7 +30,7 @@ ReactDOM.render(
       background: `rgb(66, 86, 244, ${1 - (max - value) / (max - min)})`,
       fontSize: "11px",
     })}
-    cellRender={(value, x, y) => value && `${value}%`}
+    cellRender={value => value && `${value}%`}
   />,
   document.getElementById("app")
 );
