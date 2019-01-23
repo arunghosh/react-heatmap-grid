@@ -12,7 +12,7 @@ function XLabels({ labels, width, labelsVisibility, squares, height, yWidth }) {
           style={{
             flex: squares ? "none" : 1,
             textAlign: "center",
-            width: squares ? `${height + 1}px` : "undefined",
+            width: squares ? `${height + 1}px` : width,
             visibility:
               labelsVisibility && !labelsVisibility[i] ? "hidden" : "visible",
           }}
