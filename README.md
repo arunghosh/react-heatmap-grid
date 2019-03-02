@@ -4,7 +4,13 @@
 
 A React component for heatmap in grid layout using `div`.
 
+**Live example [here](https://codesandbox.io/s/r4rvwkl3yn)**.
+
+
 ![alt tag](https://github.com/arunghosh/react-heatmap-grid/raw/master/docs/screenshot.png)
+
+
+
 
 ## Installation
 
