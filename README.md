@@ -17,7 +17,7 @@ A React component for heatmap in grid layout using `div`.
 yarn add react-heatmap-grid
 ```
 
-or 
+or
 
 ```
 npm install react-heatmap-grid --save
@@ -26,13 +26,13 @@ npm install react-heatmap-grid --save
 
 ## Usage
 
-**Mandatory fields** 
+**Mandatory fields**
 
 |Name |Type|Sample|
 |---|---|---|
 |`xLabels`|Array of string|`['1am', '2am', '3am']`|
 |`yLabels`|Array of string|`['Sun', 'Mon']`|
-|`data`|2D Array of numbers having `yLabels.length` rows and `xLabels.length` rows|`[[2,3,5][5,6,9]]`| 
+|`data`|2D Array of numbers having `yLabels.length` rows and `xLabels.length` rows|`[[2,3,5][5,6,9]]`|
 
 ```javascript
 const xLabels = new Array(24).fill(0).map((_, i) => `${i}`);
@@ -68,6 +68,7 @@ ReactDOM.render(
 |unit|string|Unit to display next to the value on hover||
 |cellRender|function|Render custom content in cell|`() => null`|
 |cellStyle|function|To set custom cell style. It is useful for using own colour scheme||
+|title|function|To render custom title in each cell|`${value} ${unit}`|
 
 Example
 ```javascript
@@ -101,6 +102,7 @@ ReactDOM.render(
       fontSize: "11px",
     })}
     cellRender={value => value && `${value}%`}
+    title={(value, unit) => `$value`}
   />,
   document.getElementById("app")
 );
