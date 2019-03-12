@@ -18,10 +18,12 @@ const DataGrid = ({
   squares,
   cellRender,
   cellStyle,
+  title
 }) => {
   const flatArray = data.reduce((i, o) => [...o, ...i], []);
   const max = Math.max(...flatArray);
   const min = Math.min(...flatArray);
+
   return (
     <div>
       {yLabels.map((y, yi) => (
@@ -54,7 +56,7 @@ const DataGrid = ({
             return (
               <div
                 onClick={onClick.bind(this, xi, yi)}
-                title={(value || value === 0) && `${value} ${unit}`}
+                title={title(value, unit)}
                 key={`${xi}_${yi}`}
                 style={style}
               >
@@ -90,6 +92,7 @@ DataGrid.propTypes = {
   squares: PropTypes.bool,
   cellRender: PropTypes.func.isRequired,
   cellStyle: PropTypes.func.isRequired,
+  title: PropTypes.func
 };
 
 DataGrid.defaultProps = {
@@ -97,7 +100,7 @@ DataGrid.defaultProps = {
   cursor: "",
   onClick: () => {},
   squares: false,
+  title: (value, unit) => (value || value === 0) && `${value} ${unit}`
 };
 
 export default DataGrid;
-
