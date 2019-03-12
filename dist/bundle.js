@@ -784,7 +784,8 @@ function HeatMap(_ref) {
       onClick = _ref.onClick,
       squares = _ref.squares,
       cellRender = _ref.cellRender,
-      cellStyle = _ref.cellStyle;
+      cellStyle = _ref.cellStyle,
+      title = _ref.title;
 
   var cursor = "";
   if (onClick !== undefined) {
@@ -818,7 +819,8 @@ function HeatMap(_ref) {
       cursor: cursor,
       squares: squares,
       cellRender: cellRender,
-      cellStyle: cellStyle
+      cellStyle: cellStyle,
+      title: title
     }),
     xLabelsLocation === "bottom" && xLabelsEle
   );
@@ -840,7 +842,8 @@ HeatMap.propTypes = {
   onClick: _propTypes2.default.func,
   squares: _propTypes2.default.bool,
   cellRender: _propTypes2.default.func,
-  cellStyle: _propTypes2.default.func
+  cellStyle: _propTypes2.default.func,
+  title: _propTypes2.default.func
 };
 
 HeatMap.defaultProps = {
@@ -910,13 +913,15 @@ var DataGrid = function DataGrid(_ref) {
       cursor = _ref.cursor,
       squares = _ref.squares,
       cellRender = _ref.cellRender,
-      cellStyle = _ref.cellStyle;
+      cellStyle = _ref.cellStyle,
+      title = _ref.title;
 
   var flatArray = data.reduce(function (i, o) {
     return [].concat(_toConsumableArray(o), _toConsumableArray(i));
   }, []);
   var max = Math.max.apply(Math, _toConsumableArray(flatArray));
   var min = Math.min.apply(Math, _toConsumableArray(flatArray));
+
   return _react2.default.createElement(
     "div",
     null,
@@ -954,7 +959,7 @@ var DataGrid = function DataGrid(_ref) {
             "div",
             {
               onClick: onClick.bind(undefined, xi, yi),
-              title: (value || value === 0) && value + " " + unit,
+              title: title(value, unit),
               key: xi + "_" + yi,
               style: style
             },
@@ -985,14 +990,18 @@ DataGrid.propTypes = {
   cursor: _propTypes2.default.string,
   squares: _propTypes2.default.bool,
   cellRender: _propTypes2.default.func.isRequired,
-  cellStyle: _propTypes2.default.func.isRequired
+  cellStyle: _propTypes2.default.func.isRequired,
+  title: _propTypes2.default.func
 };
 
 DataGrid.defaultProps = {
   displayYLabels: true,
   cursor: "",
   onClick: function onClick() {},
-  squares: false
+  squares: false,
+  title: function title(value, unit) {
+    return (value || value === 0) && value + " " + unit;
+  }
 };
 
 exports.default = DataGrid;
