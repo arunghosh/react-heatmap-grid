@@ -20,6 +20,7 @@ function HeatMap({
   squares,
   cellRender,
   cellStyle,
+  title
 }) {
   let cursor = "";
   if (onClick !== undefined) {
@@ -56,6 +57,7 @@ function HeatMap({
           squares,
           cellRender,
           cellStyle,
+          title
         }}
       />
       {xLabelsLocation === "bottom" && xLabelsEle}
@@ -84,6 +86,7 @@ HeatMap.propTypes = {
   squares: PropTypes.bool,
   cellRender: PropTypes.func,
   cellStyle: PropTypes.func,
+  title: PropTypes.func
 };
 
 HeatMap.defaultProps = {
@@ -102,8 +105,7 @@ HeatMap.defaultProps = {
   cellStyle: (background, value, min, max) => ({
     background,
     opacity: (value - min) / (max - min) || 0,
-  }),
+  })
 };
 
 export default HeatMap;
-
