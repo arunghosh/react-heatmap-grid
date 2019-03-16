@@ -102,7 +102,7 @@ ReactDOM.render(
       fontSize: "11px",
     })}
     cellRender={value => value && `${value}%`}
-    title={(value, unit) => `$value`}
+    title={(value, unit) => `${value}`}
   />,
   document.getElementById("app")
 );
