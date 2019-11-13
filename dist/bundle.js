@@ -3677,7 +3677,7 @@ var DataGrid = function DataGrid(_ref) {
             "div",
             {
               onClick: onClick.bind(undefined, xi, yi),
-              title: title(value, unit, xi),
+              title: title(value, unit, xi, yi),
               key: xi + "_" + yi,
               style: style
             },
