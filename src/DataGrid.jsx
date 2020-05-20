@@ -31,6 +31,7 @@ const DataGrid = ({
           <FixedBox width={yLabelWidth}>
             <div
               style={{
+                position: "absolute",
                 textAlign: yLabelTextAlign,
                 paddingRight: "5px",
                 paddingTop: `${height / 3.7}px`,
