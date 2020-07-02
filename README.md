@@ -1,5 +1,7 @@
 # react-heatmap-grid
 
+Created a [new version](https://github.com/arunghosh/react-grid-heatmap) of this having smaller size and a better interface. Check it out.
+
 [![Build Status](https://travis-ci.org/arunghosh/react-heatmap-grid.svg?branch=master)](https://travis-ci.org/arunghosh/react-heatmap-grid)
 
 A React component for heatmap in grid layout using `div`.
