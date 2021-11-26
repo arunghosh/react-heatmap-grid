@@ -1,6 +1,10 @@
 ## Disclaimer
 
-This is a fork of the original `react-grid-heatmap`, from `arunghosh`. As that one is not maintained, I tried to make it compatible with React 17. I don't plan to add new features or fix existing bugs, but PRs are welcome.
+This is a fork of the original `react-grid-heatmap`, from `arunghosh`. [Original work from arunghosh](https://github.com/arunghosh/react-heatmap-grid)
+
+As that one is not maintained, I tried to make it compatible with React 17. I don't plan to add new features or fix existing bugs, but PRs are welcome.
+
+Below is the original `README` from that repository.
 
 # react-heatmap-grid
 
