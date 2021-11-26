@@ -1,14 +1,8 @@
-## Disclaimer
-
-This is a fork of the original `react-grid-heatmap`, from `arunghosh`. [Original work from arunghosh](https://github.com/arunghosh/react-heatmap-grid)
-
-As that one is not maintained, I tried to make it compatible with React 17. I don't plan to add new features or fix existing bugs, but PRs are welcome.
-
-Below is the original `README` from that repository.
-
 # react-heatmap-grid
 
-Created a [new (yet outdated) version](https://github.com/arunghosh/react-grid-heatmap) of this having smaller size and a better interface. Check it out.
+Created a [new version](https://github.com/arunghosh/react-grid-heatmap) of this having smaller size and a better interface. Check it out.
+
+[![Build Status](https://travis-ci.org/arunghosh/react-heatmap-grid.svg?branch=master)](https://travis-ci.org/arunghosh/react-heatmap-grid)
 
 A React component for heatmap in grid layout using `div`.
 
@@ -128,3 +122,5 @@ npm run dev
 ```
 npm run test
 ```
+
+<a href="https://www.buymeacoffee.com/arunghosh" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
