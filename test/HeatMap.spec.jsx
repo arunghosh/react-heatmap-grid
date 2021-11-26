@@ -1,7 +1,7 @@
 import React from "react";
 import "raf/polyfill";
 import { shallow, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-17";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import HeatMap from "../src/HeatMap";
 import DataGrid from "../src/DataGrid";
 import XLabels from "../src/XLabels";
