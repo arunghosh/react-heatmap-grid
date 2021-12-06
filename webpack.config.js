@@ -26,21 +26,30 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }, {
         test: /\.scss$/,
         use: [
           {
             loader: 'style-loader', // creates style nodes from JS strings
-          }, {
+          },
+          {
             loader: 'css-loader', // translates CSS into CommonJS
           },
         ],
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  }
 };
