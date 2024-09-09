@@ -4,7 +4,7 @@ import FixedBox from "./FixedBox";
 
 function XLabels({ labels, width, labelsVisibility, squares, height, yWidth }) {
   return (
-    <div style={{ display: "flex" }}>
+    <div id='x-labels-list' style={{ display: "flex" }}>
       <FixedBox width={yWidth} />
       {labels.map((x, i) => (
         <div
@@ -41,4 +41,3 @@ XLabels.defaultProps = {
 };
 
 export default XLabels;
-

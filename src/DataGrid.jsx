@@ -27,7 +27,7 @@ const DataGrid = ({
   return (
     <div>
       {yLabels.map((y, yi) => (
-        <div key={yi} style={{ display: "flex" }}>
+        <div id='heatmap-row' key={yi} style={{ display: "flex" }}>
           <FixedBox width={yLabelWidth}>
             <div
               style={{
@@ -56,6 +56,7 @@ const DataGrid = ({
             );
             return (
               <div
+                id='single-heatmap-cell'
                 onClick={onClick.bind(this, xi, yi)}
                 title={title(value, unit, xi, yi)}
                 key={`${xi}_${yi}`}

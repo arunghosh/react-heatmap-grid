@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FixedBox = ({ children, width }) => {
-  return <div style={{ flex: `0 0 ${width}px` }}> {children} </div>;
+  return <div id='y-label' style={{ flex: `0 0 ${width}px` }}> {children} </div>;
 };
 
 FixedBox.defaultProps = {
@@ -15,4 +15,3 @@ FixedBox.propTypes = {
 };
 
 export default FixedBox;
-
