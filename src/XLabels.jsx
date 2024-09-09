@@ -8,6 +8,7 @@ function XLabels({ labels, width, labelsVisibility, squares, height, yWidth }) {
       <FixedBox width={yWidth} />
       {labels.map((x, i) => (
         <div
+          id='x-label'
           key={i}
           style={{
             flex: squares ? "none" : 1,
