@@ -37,7 +37,7 @@ function HeatMap({
     />
   );
   return (
-    <div>
+    <div id='outer-container'>
       {xLabelsLocation === "top" && xLabelsEle}
       <DataGrid
         {...{
