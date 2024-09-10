@@ -5,7 +5,7 @@ import FixedBox from "./FixedBox";
 function XLabels({ labels, width, labelsVisibility, squares, height, yWidth }) {
   return (
     <div id='x-labels-list' style={{ display: "flex" }}>
-      <FixedBox width={yWidth} />
+      <FixedBox width={yWidth} empty={!false} />
       {labels.map((x, i) => (
         <div
           id='x-label'

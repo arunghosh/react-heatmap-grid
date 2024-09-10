@@ -1,6 +1,6 @@
 {
-  "name": "react-heatmap-grid",
-  "version": "0.9.0",
+  "name": "react-heatmap-fork",
+  "version": "1.0.1",
   "description": "React component for heatmap on grid layout",
   "main": "dist/bundle.js",
   "scripts": {
@@ -8,10 +8,10 @@
     "dev": "NODE_ENV=dev webpack-dev-server --mode=development",
     "build": "rimraf dist && eslint src && NODE_ENV=prod webpack --mode=production"
   },
-  "author": "Arun Ghosh",
+  "author": "Dario Del Piano",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arunghosh/react-heatmap-grid"
+    "url": "https://github.com/ddelpiano/react-heatmap-grid"
   },
   "keywords": [
     "heatmap",
