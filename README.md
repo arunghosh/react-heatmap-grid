@@ -31,6 +31,8 @@ npm install react-heatmap-grid --save
 | `data`    | 2D Array of numbers having `yLabels.length` rows and `xLabels.length` rows | `[[2,3,5][5,6,9]]`      |
 
 ```javascript
+import HeatMap from "react-heatmap-grid";
+
 const xLabels = new Array(24).fill(0).map((_, i) => `${i}`);
 const yLabels = ["Sun", "Mon", "Tue"];
 const data = new Array(yLabels.length)
